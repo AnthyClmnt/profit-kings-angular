@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
-  background: #343d46;
+  background: rgb(103,164,218);
+  background: linear-gradient(180deg, rgba(103,164,218,1) 26%, rgba(104,164,218,1) 27%, rgba(148,198,242,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: Poppins;
+  font-size: 3.5em;
+  padding: .5em;
 }

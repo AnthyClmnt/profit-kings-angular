@@ -14,8 +14,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.configService.getUsersRequest().subscribe(x => {
-      this.users = x;
-    })
   }
 }

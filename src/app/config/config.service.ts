@@ -12,4 +12,8 @@ export class ConfigService {
   public getUsersRequest(){
     return this.http.get(this.REST_API_SERVER+"/users/");
   }
+
+  public getUserByEmailRequest(user_email: string, user_psw: string) {
+    return this.http.get(this.REST_API_SERVER+'/user/'+user_email+user_psw)
+  }
 }
