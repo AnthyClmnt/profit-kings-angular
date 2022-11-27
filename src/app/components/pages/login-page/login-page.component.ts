@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ConfigService} from "../../../config/config.service";
+import * as http from "http";
 
 @Component({
   selector: 'login-page',
@@ -26,7 +27,7 @@ export class LoginPageComponent {
   public onSubmit() {
     this.submitted = true;
     if (this.loginForm.value.username) {
-      this.configService.getUserByEmailRequest(this.loginForm.value.username, this.loginForm.value.password ?? '').subscribe((x) => {
+      this.configService.loginUserRequest(this.loginForm.value.username, this.loginForm.value.password ?? '').subscribe((x) => {
         console.log('user', x)
       })
     }

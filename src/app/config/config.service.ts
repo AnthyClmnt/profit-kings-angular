@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,11 @@ export class ConfigService {
     return this.http.get(this.REST_API_SERVER+"/users/");
   }
 
-  public getUserByEmailRequest(user_email: string, user_psw: string) {
-    return this.http.get(this.REST_API_SERVER+'/user/'+user_email+user_psw)
+  public loginUserRequest(user_email: string, user_psw: string) {
+    const body = new HttpParams()
+      .set('username', user_email)
+      .set('password', user_psw);
+
+    return this.http.post(this.REST_API_SERVER+'/login', body)
   }
 }
